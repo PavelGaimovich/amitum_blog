@@ -4,9 +4,9 @@
       = link_to 'AmitumBlog', home_index_path, class: 'navbar-brand'
     %ul.nav.navbar-nav
       %li.active
-        %a{:href => "#"} Articles
+        = link_to 'Articles', articles_path
       %li
-        %a{:href => "#"} My articles
+        = link_to 'My articles', articles_path
     %ul.nav.navbar-nav.navbar-right
       - if current_user.blank?
         %li
