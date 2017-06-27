@@ -2,5 +2,13 @@
   .container
     = link_to 'Create article', new_article_path, class: 'btn btn-primary'
 .row
-= render @articles
-= paginate @articles
+%table.table.table-striped
+  %thead
+    %tr
+      %th Title
+      %th Paragraph
+      %th Author
+      %th Created
+  %tbody
+    = render @articles
+  = paginate @articles
