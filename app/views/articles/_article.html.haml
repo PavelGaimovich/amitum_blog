@@ -1,5 +1,6 @@
-%tr
+%tr{class: 'js-clickable-row', 'data-href': article_path(article)}
   %td= article.title
-  %td La-la-dance
+  %td= truncate(article.text, length: 30)
+  %td= article.views_count
   %td= article.user.name
   %td= article.created_at.strftime('%F %H:%M')

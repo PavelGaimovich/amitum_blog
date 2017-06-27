@@ -8,7 +8,7 @@
     - @user_articles.each do |article|
       %tr
         %td= article.title
-        %td La-la-dance
+        %td= truncate(article.text, length: 30)
         %td
           = link_to 'Show', user_article_path(article)
           \|
