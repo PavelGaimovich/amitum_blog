@@ -9,10 +9,6 @@ class User::ArticlesController < ApplicationController
     @user_article = Article.new
   end
 
-  def edit
-    @user_article
-  end
-
   def create
     @user_article = Article.create(article_params)
   end
