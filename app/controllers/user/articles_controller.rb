@@ -13,7 +13,7 @@ class User::ArticlesController < ApplicationController
     @user_article = Article.new(article_params)
 
     if @user_article.save
-      redirect_to @user_article
+      redirect_to user_article_path(@user_article)
     else
       render 'new'
     end
@@ -38,6 +38,6 @@ class User::ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:title, :text, :user_id, :all_categories)
+    params.require(:article).permit(:title, :text, :user_id, :all_categories, :article_picture)
   end
 end

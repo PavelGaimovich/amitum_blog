@@ -15,6 +15,9 @@
       placeholder: "Categories separated with comma",
       class: 'js-category-selector form-control'
   .form-group
+    = f.label :article_picture, 'Add picture to Article'
+    = f.file_field :article_picture, multiple: false
+  .form-group
     = f.cktext_area :text, rows: 20
   = f.hidden_field :user_id, value: current_user.id
   .actions

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170628131925) do
+ActiveRecord::Schema.define(version: 20170628153520) do
 
   create_table "articles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20170628131925) do
     t.decimal "views_count", precision: 10, default: "0"
     t.string "url_slug"
     t.datetime "modify_until"
+    t.string "article_picture"
     t.index ["user_id"], name: "index_articles_on_user_id"
   end
 
