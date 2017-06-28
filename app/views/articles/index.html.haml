@@ -9,3 +9,6 @@
   %tbody
     = render @articles
     = paginate @articles
+%br/
+%h2 Most popular categories
+= render Category.most_popular_categories
