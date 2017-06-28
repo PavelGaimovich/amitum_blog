@@ -1,4 +1,5 @@
 .container
+  %i= @article.all_categories
   %h1= @article.title
   %h4= "Author: #{@article.user.name}. Created: #{@article.created_at.strftime('%F %H:%M')}"
   %br/

@@ -38,6 +38,6 @@ class User::ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:title, :text, :user_id)
+    params.require(:article).permit(:title, :text, :user_id, :all_categories)
   end
 end

@@ -1,6 +1,6 @@
 class CanModifyArticleValidator < ActiveModel::Validator
   def validate(record)
-    if record.modify_until < Time.now
+    unless record.can_modify?
       record.errors[:base] << "Article can be changed only in first hour"
     end
   end

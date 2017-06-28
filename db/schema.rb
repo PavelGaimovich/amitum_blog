@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170627185649) do
+ActiveRecord::Schema.define(version: 20170628125120) do
 
   create_table "articles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
@@ -22,6 +22,21 @@ ActiveRecord::Schema.define(version: 20170627185649) do
     t.string "url_slug"
     t.datetime "modify_until"
     t.index ["user_id"], name: "index_articles_on_user_id"
+  end
+
+  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "categorizings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "article_id"
+    t.bigint "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["article_id"], name: "index_categorizings_on_article_id"
+    t.index ["category_id"], name: "index_categorizings_on_category_id"
   end
 
   create_table "ckeditor_assets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -55,4 +70,6 @@ ActiveRecord::Schema.define(version: 20170627185649) do
   end
 
   add_foreign_key "articles", "users"
+  add_foreign_key "categorizings", "articles"
+  add_foreign_key "categorizings", "categories"
 end
