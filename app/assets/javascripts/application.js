@@ -14,4 +14,5 @@
 //= require turbolinks
 //= require jquery-3.2.1
 //= require bootstrap-sprockets
+//= require ckeditor/init
 //= require_tree .

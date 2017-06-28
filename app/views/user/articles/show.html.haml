@@ -1,3 +1,6 @@
-= @user_article.title
-= @user_article.text
-= link_to 'Back', user_articles_path
+.container
+  %h1= @user_article.title
+  %h4= "Author: #{@user_article.user.name}. Created: #{@user_article.created_at.strftime('%F %H:%M')}"
+  %br/
+  %p= raw(@user_article.text)
+  = link_to 'Back', articles_path

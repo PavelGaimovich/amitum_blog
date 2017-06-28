@@ -10,11 +10,21 @@ class User::ArticlesController < ApplicationController
   end
 
   def create
-    @user_article = Article.create(article_params)
+    @user_article = Article.new(article_params)
+
+    if @user_article.save
+      redirect_to @user_article
+    else
+      render 'new'
+    end
   end
 
   def update
-    @user_article.update(article_params)
+    if @user_article.update(article_params)
+      redirect_to @user_article
+    else
+      render 'edit'
+    end
   end
 
   def destroy

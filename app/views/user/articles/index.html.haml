@@ -11,11 +11,13 @@
         %td= truncate(article.text, length: 30)
         %td
           = link_to 'Show', user_article_path(article)
-          \|
-          = link_to 'Edit', edit_user_article_path(article)
-          \|
-          = link_to 'Remove', user_article_path(article),
-            method: :delete,
-            remote: true,
-            data: { confirm: 'Are you sure?' }
+          - if article.can_modify? || true
+            \|
+            = link_to 'Edit', edit_user_article_path(article)
+            \|
+            = link_to 'Remove', user_article_path(article),
+              method: :delete,
+              remote: true,
+              data: { confirm: 'Are you sure?' }
+
     = paginate @user_articles

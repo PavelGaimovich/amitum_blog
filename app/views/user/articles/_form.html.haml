@@ -1,4 +1,5 @@
-= form_for @user_article do |f|
+= javascript_include_tag Ckeditor.cdn_url
+= form_for [:user, @user_article] do |f|
   - if @user_article.errors.any?
     #error_explanation
       %h2= "#{pluralize(@user_article.errors.count, "error")} prohibited this article from being saved:"
@@ -9,8 +10,7 @@
     = f.label :title, 'Title'
     = f.text_field :title, class: 'form-control'
   .form-group
-    = f.label :text, 'Html body'
-    = f.text_area :text, rows: 20, class: 'form-control'
+    = f.cktext_area :text, rows: 20
   = f.hidden_field :user_id, value: current_user.id
   .actions
     = f.submit 'Save', class: 'btn btn-primary'
