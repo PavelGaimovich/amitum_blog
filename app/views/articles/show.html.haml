@@ -3,4 +3,7 @@
   %h4= "Author: #{@article.user.name}. Created: #{@article.created_at.strftime('%F %H:%M')}"
   %br/
   %p= raw(@article.text)
+  %br/
+  %i= "Views: #{@article.views_count}"
+  %br/
   = link_to 'Back', articles_path
