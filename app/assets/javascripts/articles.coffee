@@ -4,3 +4,13 @@
 $(document).on 'turbolinks:load', ->
   $('.js-clickable-row').click ->
     window.location.replace(this.dataset.href)
+
+  $('.js-category-selection').click (event) ->
+    event.preventDefault()
+
+    $this = $(this)
+    $selector = $('.js-category-selector')
+    if selector_value = $selector.val()
+      $selector.val(selector_value + ', ' + $this.text())
+    else
+      $selector.val($this.text())

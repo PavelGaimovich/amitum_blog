@@ -22,7 +22,7 @@ class Article < ApplicationRecord
   end
 
   def all_categories=(names)
-    self.categories = names.split(",").map do |name|
+    self.categories = names.split(",").uniq.map do |name|
       Category.where(name: name.strip).first_or_create!
     end
   end

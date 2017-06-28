@@ -1,4 +1,3 @@
-= javascript_include_tag Ckeditor.cdn_url
 = form_for [:user, @user_article] do |f|
   - if @user_article.errors.any?
     #error_explanation
@@ -11,7 +10,10 @@
     = f.text_field :title, class: 'form-control'
   .form-group
     = f.label :title, 'Categories'
-    = f.text_field :all_categories, placeholder: "Categories separated with comma"
+    = render 'user/articles/categories/selector'
+    = f.text_field :all_categories,
+      placeholder: "Categories separated with comma",
+      class: 'js-category-selector form-control'
   .form-group
     = f.cktext_area :text, rows: 20
   = f.hidden_field :user_id, value: current_user.id
