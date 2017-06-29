@@ -1,9 +1,9 @@
 %table.table.table-striped
   %thead
     %tr
-      %th Title
-      %th Paragraph
-      %th Actions
+      %th= t 'articles.title'
+      %th= t 'articles.index.text_sample'
+      %th= t 'articles.index.actions'
   %tbody
     = render @user_articles.decorate
     = paginate @user_articles

@@ -26,11 +26,11 @@ class ArticleDecorator < Draper::Decorator
   end
 
   def about_author_and_post
-    "Author: #{user.name}. Created: #{formated_created_at}"
+    h.t('articles.author_and_then_created', author: user.name, created_at: formated_created_at )
   end
 
   def formatted_view_count
-    "Views: #{views_count}"
+    h.t('articles.formatted_view_count', views_count: views_count)
   end
 
   def html_body

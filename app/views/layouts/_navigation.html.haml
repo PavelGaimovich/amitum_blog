@@ -5,22 +5,22 @@
       - unless current_user.blank?
         %ul.nav.navbar-nav
           %li
-            %a.dropdown-toggle{ 'data-toggle': 'dropdown', href: '#' } My articles
+            %a.dropdown-toggle{ 'data-toggle': 'dropdown', href: '#' }= t 'navigation.my_articles'
             %ul.dropdown-menu
-              %li= link_to 'List', user_articles_path
-              %li= link_to 'Add new', new_user_article_path
+              %li= link_to t('navigation.list'), user_articles_path
+              %li= link_to t('navigation.add_new'), new_user_article_path
     %ul.nav.navbar-nav.navbar-right
       - if current_user.blank?
         %li
           = link_to new_user_registration_path do
             %span.glyphicon.glyphicon-user
-            Sign Up
+            = t 'navigation.sign_up'
         %li
           = link_to new_user_session_path do
             %span.glyphicon.glyphicon-log-in
-            Login
+            = t 'navigation.login'
       - else
         %li
           = link_to destroy_user_session_path, method: :delete do
             %span.glyphicon.glyphicon-log-out
-            Log out
+            = t 'navigation.logout'

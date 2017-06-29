@@ -1,0 +1,30 @@
+ru:
+  back: 'Назад'
+  show: 'Показать'
+  edit: 'Изменить'
+  remove: 'Удалить'
+  save: 'Сохранить'
+  navigation:
+    my_articles: 'Мои статьи'
+    list: 'Список'
+    add_new: 'Добавить новую'
+    sign_up: 'Регистрироваться'
+    login: 'Зайти'
+    logout: 'Выйти'
+  articles:
+    title: 'Название статьи'
+    author_and_then_created: 'Автор: %{author}. Создана: %{created_at}'
+    formatted_view_count: 'Кол-во просмотров: %{views_count}'
+    index:
+      image: 'Изображение'
+      text_sample: 'Отрывок из статьи'
+      views_count: 'Количевство просмотров'
+      author: 'Автор'
+      created_at: 'Дата создания'
+      most_popular_categories: 'Самые популярные категории'
+      title_content_search: 'Поиcк по названиям статей:'
+      actions: 'Действия'
+    edit:
+      categories: 'Рубрики'
+      categories_separated: 'Рубрики разделенные запятой'
+      article_picture: 'Загрузить изобржение'

@@ -2,12 +2,12 @@
   %td= article.title
   %td= article.text_sample
   %td
-    = link_to 'Show', user_article_path(article)
+    = link_to t('show'), user_article_path(article)
     - if article.can_modify?
       \|
-      = link_to 'Edit', edit_user_article_path(article)
+      = link_to t('edit'), edit_user_article_path(article)
       \|
-      = link_to 'Remove', user_article_path(article),
+      = link_to t('remove'), user_article_path(article),
         method: :delete,
         remote: true,
         data: { confirm: 'Are you sure?' }
