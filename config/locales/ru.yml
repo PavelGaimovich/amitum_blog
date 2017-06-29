@@ -45,3 +45,13 @@ ru:
           other: "Показаны <b>все %{count}</b> %{entry_name}"
       more_pages:
         display_entries: "Показана %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> из <b>%{total}</b>"
+  activerecord:
+    models:
+      article: 'Статья'
+    attributes:
+      article:
+        title: 'Название статьи'
+        text: 'Содержимое'
+    errors:
+      messages:
+        blank: 'должно быть заполнено'
