@@ -1,6 +1,7 @@
 %tr{class: 'js-clickable-row', 'data-href': article_path(article)}
+  %td= image_tag(article.article_picture.url, size: '70x70') if article.article_picture.present?
   %td= article.title
-  %td= truncate(article.text, length: 30)
+  %td= truncate(sanitize(article.text), length: 30)
   %td= article.views_count
   %td= article.user.name
   %td= article.created_at.strftime('%F %H:%M')

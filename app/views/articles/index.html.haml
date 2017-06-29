@@ -1,6 +1,12 @@
+= search_form_for @q, class: 'form-inline' do |f|
+  .form-group
+    = f.label :title_cont
+    = f.search_field :title_cont, class: 'form-control'
+
 %table.table.table-striped.table-hover
   %thead
     %tr
+      %th Image
       %th Title
       %th Paragraph
       %th Views

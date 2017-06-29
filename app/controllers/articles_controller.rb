@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   def index
-    @articles = Article.all.order(:created_at).page params[:page]
+    @q = Article.ransack(params[:q])
+    @articles = @q.result.order(:created_at).page params[:page]
   end
 
   def show

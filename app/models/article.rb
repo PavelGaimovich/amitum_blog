@@ -1,5 +1,7 @@
 class Article < ApplicationRecord
   include UrlSlugable
+  url_slug_parameter :title
+
   mount_uploader :article_picture, ArticlePictureUploader
 
   belongs_to :user

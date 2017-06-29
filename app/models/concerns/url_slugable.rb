@@ -15,9 +15,13 @@ module UrlSlugable
     def set_url_slug
       self.url_slug = to_param
     end
+  end
 
-    def to_param
-      [title.parameterize].join("-") rescue nil
+  class_methods do
+    def url_slug_parameter(parameter)
+      define_method(:to_param) do
+        [send(parameter).parameterize].join("-") rescue nil
+      end
     end
   end
 end
