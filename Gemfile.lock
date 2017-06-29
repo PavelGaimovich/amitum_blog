@@ -88,6 +88,8 @@ GEM
       railties (>= 4.1.0, < 5.2)
       responders
       warden (~> 1.2.3)
+    devise-bootstrap-views (0.0.11)
+    devise-i18n (1.1.2)
     draper (3.0.0)
       actionpack (~> 5.0)
       activemodel (~> 5.0)
@@ -257,6 +259,8 @@ DEPENDENCIES
   ckeditor
   coffee-rails (~> 4.2)
   devise
+  devise-bootstrap-views
+  devise-i18n
   draper
   font-awesome-rails
   haml
