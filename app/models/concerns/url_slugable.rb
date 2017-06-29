@@ -20,7 +20,8 @@ module UrlSlugable
   class_methods do
     def url_slug_parameter(parameter)
       define_method(:to_param) do
-        [send(parameter).parameterize].join("-") rescue nil
+        translited_text = Translit.convert(send(parameter), :english )
+        [translited_text.parameterize].join("-") rescue nil
       end
     end
   end

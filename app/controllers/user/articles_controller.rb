@@ -29,6 +29,7 @@ class User::ArticlesController < ApplicationController
 
   def destroy
     @user_article.destroy
+    redirect_to user_articles_path
   end
 
   private

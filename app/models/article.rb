@@ -5,7 +5,7 @@ class Article < ApplicationRecord
   mount_uploader :article_picture, ArticlePictureUploader
 
   belongs_to :user
-  has_many :categorizings
+  has_many :categorizings, :dependent => :delete_all
   has_many :categories, :through => :categorizings
 
   before_validation :set_modify_until
