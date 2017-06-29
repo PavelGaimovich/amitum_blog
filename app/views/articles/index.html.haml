@@ -14,7 +14,7 @@
       %th= t '.created_at'
   %tbody
     = render @articles.decorate
-    = paginate @articles
+    = paginate @articles, :theme => 'twitter-bootstrap-3'
 %br/
 %h2= t '.most_popular_categories'
 = render Category.most_popular_categories

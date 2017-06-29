@@ -65,3 +65,4 @@ gem 'ransack'
 gem 'draper'
 gem 'devise-i18n'
 gem 'devise-bootstrap-views'
+gem "bootstrap-kaminari-views"

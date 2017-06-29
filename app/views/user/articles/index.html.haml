@@ -6,4 +6,4 @@
       %th= t 'articles.index.actions'
   %tbody
     = render @user_articles.decorate
-    = paginate @user_articles
+    = paginate @user_articles, :theme => 'twitter-bootstrap-3'
