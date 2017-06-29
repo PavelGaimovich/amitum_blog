@@ -2,11 +2,11 @@
   .row
     = render partial: '/categories/category', collection: @user_article.categories
     %h1= @user_article.title
-    = image_tag(@user_article.article_picture.url, class: 'img-responsive') if @user_article.article_picture.present?
-    %h4= "Author: #{@user_article.user.name}. Created: #{@user_article.created_at.strftime('%F %H:%M')}"
+    = @user_article.image_responsive
+    %h4= @user_article.about_author_and_post
     %br/
-    %p= raw(@user_article.text)
+    %p= @user_article.html_body
     %br/
-    %i= "Views: #{@user_article.views_count}"
+    %i= @user_article.formatted_view_count
     %br/
     = link_to 'Back', user_articles_path

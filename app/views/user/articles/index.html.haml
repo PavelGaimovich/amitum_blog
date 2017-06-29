@@ -5,19 +5,5 @@
       %th Paragraph
       %th Actions
   %tbody
-    - @user_articles.each do |article|
-      %tr
-        %td= article.title
-        %td= truncate(article.text, length: 30)
-        %td
-          = link_to 'Show', user_article_path(article)
-          - if article.can_modify? || true
-            \|
-            = link_to 'Edit', edit_user_article_path(article)
-            \|
-            = link_to 'Remove', user_article_path(article),
-              method: :delete,
-              remote: true,
-              data: { confirm: 'Are you sure?' }
-
+    = render @user_articles.decorate
     = paginate @user_articles

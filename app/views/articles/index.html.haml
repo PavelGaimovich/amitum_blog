@@ -13,7 +13,7 @@
       %th Author
       %th Created
   %tbody
-    = render @articles
+    = render @articles.decorate
     = paginate @articles
 %br/
 %h2 Most popular categories

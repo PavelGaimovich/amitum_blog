@@ -1,10 +1,11 @@
 .container
   = render @article.categories
   %h1= @article.title
-  %h4= "Author: #{@article.user.name}. Created: #{@article.created_at.strftime('%F %H:%M')}"
+  = @article.image_responsive
+  %h4= @article.about_author_and_post
   %br/
-  %p= raw(@article.text)
+  %p= @article.html_body
   %br/
-  %i= "Views: #{@article.views_count}"
+  %i= @article.formatted_view_count
   %br/
   = link_to 'Back', articles_path
