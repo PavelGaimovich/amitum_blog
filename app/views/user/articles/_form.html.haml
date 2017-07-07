@@ -1,19 +1,9 @@
-= form_for [:user, @user_article] do |f|
+= simple_form_for [:user, @user_article] do |f|
   = render 'errors/jumbotron', object: @user_article
-  .form-group
-    = f.label :title, t('articles.title')
-    = f.text_field :title, class: 'form-control'
-  .form-group
-    = f.label :title, t('articles.edit.categories')
-    = render 'user/articles/categories/selector'
-    = f.text_field :all_categories,
-      placeholder: t('articles.edit.categories_separated'),
-      class: 'js-category-selector form-control'
-  .form-group
-    = f.label :article_picture, t('articles.edit.article_picture')
-    = f.file_field :article_picture, multiple: false
-  .form-group
-    = f.cktext_area :text, rows: 20
+  = f.input :title
+  = render 'user/articles/categories/selector'
+  = f.input :all_categories, input_html: { class: 'js-category-selector' }
+  = f.input :article_picture, as: :file
+  = f.cktext_area :text, rows: 20
   = f.hidden_field :user_id, value: current_user.id
-  .actions
-    = f.submit t('save'), class: 'btn btn-primary'
+  = f.submit t('save'), class: 'btn btn-primary'

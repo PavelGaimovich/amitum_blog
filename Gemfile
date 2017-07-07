@@ -67,3 +67,4 @@ gem 'devise-i18n'
 gem 'devise-bootstrap-views'
 gem "bootstrap-kaminari-views"
 gem 'translit'
+gem 'simple_form'

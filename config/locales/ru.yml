@@ -4,6 +4,7 @@ ru:
   edit: 'Изменить'
   remove: 'Удалить'
   save: 'Сохранить'
+  errors: 'Ошибки'
   navigation:
     my_articles: 'Мои статьи'
     list: 'Список'
@@ -52,6 +53,14 @@ ru:
       article:
         title: 'Название статьи'
         text: 'Содержимое'
+        all_categories: 'Рубрики'
+        article_picture: 'Изображение'
     errors:
       messages:
         blank: 'должно быть заполнено'
+  simple_form:
+    "yes": 'Да'
+    "no": 'Нет'
+    required:
+      text: 'необходимо указать'
+      mark: '*'
