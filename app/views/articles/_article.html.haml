@@ -1,6 +1,7 @@
-%tr{class: 'js-clickable-row', 'data-href': article_path(article)}
+%tr
   %td= article.image70x70
-  %td= article.title
+  %td
+    %a{href: article_path(article)}= article.title
   %td= article.text_sample
   %td= article.views_count
   %td= article.user_name

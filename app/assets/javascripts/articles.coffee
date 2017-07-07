@@ -2,8 +2,6 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $(document).on 'turbolinks:load', ->
-  $('.js-clickable-row').click ->
-    window.location.replace(this.dataset.href)
 
   $('.js-category-selection').click (event) ->
     event.preventDefault()
