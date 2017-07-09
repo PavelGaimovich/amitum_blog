@@ -3,7 +3,7 @@
   %td= article.text_sample
   %td
     = link_to t('show'), user_article_path(article)
-    - if article.can_modify?
+    - if can? :edit, article.object
       \|
       = link_to t('edit'), edit_user_article_path(article)
       \|

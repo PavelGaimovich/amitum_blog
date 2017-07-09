@@ -68,3 +68,4 @@ gem 'devise-bootstrap-views'
 gem "bootstrap-kaminari-views"
 gem 'translit'
 gem 'simple_form'
+gem 'cancancan'

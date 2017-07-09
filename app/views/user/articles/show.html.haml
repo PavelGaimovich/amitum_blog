@@ -1,12 +1,13 @@
+- @article = @article.decorate
 .container
   .row
-    = render partial: '/categories/category', collection: @user_article.categories
-    %h1= @user_article.title
-    = @user_article.image_responsive
-    %h4= @user_article.about_author_and_post
+    = render partial: '/categories/category', collection: @article.categories
+    %h1= @article.title
+    = @article.image_responsive
+    %h4= @article.about_author_and_post
     %br/
-    %p= @user_article.html_body
+    %p= @article.html_body
     %br/
-    %i= @user_article.formatted_view_count
+    %i= @article.formatted_view_count
     %br/
     = link_to t('back'), user_articles_path

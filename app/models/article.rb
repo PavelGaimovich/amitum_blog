@@ -8,20 +8,14 @@ class Article < ApplicationRecord
   has_many :categorizings, :dependent => :delete_all
   has_many :categories, :through => :categorizings
 
-  before_validation :set_modify_until
-
   validates :title, :text, presence: true
-  validates_with CanModifyArticleValidator
-
+  validates :title, uniqueness: true
+  
   paginates_per 5
 
   def register_view
     self.views_count += 1
     self.save
-  end
-
-  def can_modify?
-    self.modify_until >= Time.now
   end
 
   def all_categories=(names)
@@ -32,11 +26,5 @@ class Article < ApplicationRecord
 
   def all_categories
     self.categories.map(&:name).join(", ")
-  end
-
-  private
-
-  def set_modify_until
-    self.modify_until = Time.now + 1.hour
   end
 end

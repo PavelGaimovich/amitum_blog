@@ -58,9 +58,17 @@ ru:
     errors:
       messages:
         blank: 'должно быть заполнено'
+      models:
+        article:
+          attributes:
+            title:
+              taken: 'уже существует'
   simple_form:
     "yes": 'Да'
     "no": 'Нет'
     required:
       text: 'необходимо указать'
       mark: '*'
+
+  unauthorized:
+    default: "У вас нет прав доступа к этому объекту"

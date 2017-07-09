@@ -1,5 +1,5 @@
-= simple_form_for [:user, @user_article] do |f|
-  = render 'errors/jumbotron', object: @user_article
+= simple_form_for [:user, @article] do |f|
+  = render 'errors/jumbotron', object: @article
   = f.input :title
   = render 'user/articles/categories/selector'
   = f.input :all_categories, input_html: { class: 'js-category-selector' }
