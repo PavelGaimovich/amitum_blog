@@ -7,8 +7,11 @@ class Ability
     alias_action :update, :destroy, :to => :modify
 
     can :manage, Article
-    cannot :modify, Article do |article|
-      article.user != user || article.created_at < Time.now - 1.hour
+
+    unless user.has_role?(:admin)
+      cannot :modify, Article do |article|
+        article.user != user || article.created_at < Time.now - 1.hour
+      end
     end
   end
 end
